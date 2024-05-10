@@ -1,7 +1,7 @@
 name: .NET CI DOCKER 
 
 env:
-  # registryName: 4wuc66zjaamv4wthregsmith.azurecr.io
+  registryName: 4wuc66zjaamv4wthregsmith.azurecr.io
   repositoryName: wth/dotnetcoreapp
   dockerFolderPath: ./Application/src/RazorPagesTestSample
   tag: ${{github.run_number}}
@@ -46,7 +46,7 @@ jobs:
       # uses: docker/login-action@28218f9b04b4f3f62068d7b6ce6ca5b26e35336c
       uses: azure/docker-login@v1
       with:
-        login-server: ${{ env.REGISTRYNAME }}
+        login-server: ${{ env.registryName }}
         username: ${{ secrets.ACR_USERNAME }}
         password: ${{ secrets.ACR_PASSWORD }}
         
